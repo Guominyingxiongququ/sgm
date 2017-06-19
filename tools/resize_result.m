@@ -1,3 +1,4 @@
+// This is a tool to resize images
 fileListing  = dir('/home/xiyu/Desktop/project/VideoParsing/videoparsing/build/Results_WithFSO/*.png');
 
 curMax = 0;

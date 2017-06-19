@@ -1,3 +1,5 @@
+// This is a script to recitify images
+// The path of left and right images
 LeftListing  = dir('/home/xiyu/Downloads/LeftStereo_rectfiedPinhole/left/*.png');
 RightListing = dir('/home/xiyu/Downloads/LeftStereo_rectfiedPinhole/right/*.png');
 

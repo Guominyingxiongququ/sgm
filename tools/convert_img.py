@@ -1,6 +1,10 @@
+# This script is used to convert file to png format
+
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
+
+# set the absolute path of the source and target folder
 targetpath = "/home/xiyu/Desktop/sgm_stereo/kitti_rgb" 
 mypath = "/home/xiyu/Desktop/sgm_stereo/kinect_kitti_rgb"
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]

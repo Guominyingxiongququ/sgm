@@ -33,17 +33,8 @@ function getDisparity(leftImg,rightImg,resultName)
     [D1,D2] = sgmStereoMex(I1,I2,1);
     toc
     imagesc(D1); colormap(jet(1024));
-    saveas(gcf,resultName,'png')
-    
-%     D2 = double(D2); 
-%     D1(D1< 1)=0;
-%     size(D1)
-%     D1 = uint16(D1);
-%     figure,imagesc(D1); colormap(jet(1024));
-%   D3 = cat(3,D1,D1,D1);
-%     imwrite(D3,resultName);
-%     I1 = imread(resultName);
-%     imshow(I1);
+    saveas(gcf,resultName,'png')    
+
 // set a default disparity for pixels with void disparity
     D1(D1< 1)=10000.0;
 %     D1 = (1./D1)*0.239983*983.044;
@@ -51,19 +42,6 @@ function getDisparity(leftImg,rightImg,resultName)
     D1 = (1./D1)* 320.0 * 0.5009;
   
     D1 = uint16(D1);
-%     figure,imagesc(D1); colormap(jet(1024));
-%     dlmwrite(resultName,D1,'\t');
-
-%     imwrite(D1,resultName);
-    
-%     figure,imagesc(D1); colormap(jet(1024));
-
-%     disp('processing with new features+settings ...');
-%     [D1,D2] = sgmStereoMex(I1,I2,0);
-%     figure,imagesc(D1); colormap(jet(1024));
-%     figure,imagesc(D2); colormap(jet(1024));
-%     disp('done!');
-%     maxRange = max(max(max(D1)),max(max(D2)));
 end
 
 function [idx, fullName] = getFullName(inputFile)
