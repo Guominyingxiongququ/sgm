@@ -1,8 +1,6 @@
 close all;
 
-% I1 = imread('1.png');
-% I2 = imread('2.png');
-
+//set the absolute path of the input images
 I1 = imread('kitti_0.png');
 I2 = imread('kitti_1.png');
 figure,imagesc(I1),colormap gray;
@@ -13,6 +11,8 @@ I2 = rgb2gray(I2);
 
 disp('processing with old features+settings ...');
 tic;
+
+// the last parameter of the function sgmStereoMex is the set of parameters, it could be found in the function of sgmStereoMex
 [D1,D2] = sgmStereoMex(I2,I1,0);
 toc;
 figure,imagesc(D1); colormap(jet(1024));

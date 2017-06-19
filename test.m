@@ -1,8 +1,4 @@
-% LeftListing  = dir('/home/xiyu/Downloads/06/image_2/*.png');
-% RightListing = dir('/home/xiyu/Downloads/06/image_3/*.png');
-
-% LeftListing  = dir('/home/xiyu/Downloads/data/2014-05-14-13-50-20/stereo/left/*.png');
-% RightListing = dir('/home/xiyu/Downloads/data/2014-05-14-13-50-20/stereo/right/*.png');
+// set the input folder of left and right images
 
 LeftListing  = dir('/media/xiyu/data/dataset/sequences/06/image_2/*.png');
 RightListing = dir('/media/xiyu/data/dataset/sequences/06/image_3/*.png');
@@ -48,8 +44,10 @@ function getDisparity(leftImg,rightImg,resultName)
 %     imwrite(D3,resultName);
 %     I1 = imread(resultName);
 %     imshow(I1);
+// set a default disparity for pixels with void disparity
     D1(D1< 1)=10000.0;
 %     D1 = (1./D1)*0.239983*983.044;
+// convert disparity map to depth map
     D1 = (1./D1)* 320.0 * 0.5009;
   
     D1 = uint16(D1);
